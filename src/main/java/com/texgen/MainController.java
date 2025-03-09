@@ -1,4 +1,4 @@
-package com.texgen.main;
+package com.texgen;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
