@@ -1,0 +1,4 @@
+.command { -fx-fill: blue; -fx-font-weight: bold; }   /* LaTeX commands */
+.bracket { -fx-fill: darkred; }                        /* Curly braces */
+.math { -fx-fill: green; -fx-font-style: italic; }    /* Inline math */
+.comment { -fx-fill: gray; -fx-font-style: italic; }  /* Comments */

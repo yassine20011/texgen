@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.texgen.controllers.SignUp" fx:id="rootPane">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20"/>
+    </padding>
+    <children>
+        <VBox spacing="15" alignment="CENTER">
+            <children>
+                <Label text="TexGen Sign Up Page" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+                <GridPane hgap="10" vgap="10">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT"/>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="150"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="30"/>
+                        <RowConstraints minHeight="30"/>
+                        <RowConstraints minHeight="30"/>
+                        <RowConstraints minHeight="30"/>
+                    </rowConstraints>
+                    <children>
+                        <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                        <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                        <Label text="Confirm Password:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                        <TextField fx:id="username" promptText="Enter username" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        <TextField fx:id="email" promptText="Enter email" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        <PasswordField fx:id="password" promptText="Enter password" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                        <PasswordField fx:id="confirmPassword" promptText="Confirm password" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                    </children>
+                </GridPane>
+
+                <Button fx:id="signUpButton" text="Sign Up" defaultButton="true" style="-fx-font-size: 14px; -fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+            </children>
+        </VBox>
+    </children>
+</StackPane>
