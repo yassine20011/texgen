@@ -5,6 +5,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.StackPane?>
 
+<?import javafx.scene.control.TreeView?>
+
+<?import javafx.scene.control.SplitPane?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.texgen.MainController">
@@ -14,6 +17,7 @@
         <MenuBar>
             <Menu text="File">
                 <MenuItem text="Home" onAction="#loadHome" />
+                <MenuItem text="New project" onAction="#handleNewProject" />
                 <MenuItem text="Sign In" onAction="#loadSignIn" />
                 <MenuItem text="Sign Up" onAction="#loadSignUp" />
                 <MenuItem text="Exit" onAction="#handleExit" />
@@ -21,8 +25,12 @@
         </MenuBar>
     </top>
 
+
     <!-- Center: Dynamic Content Area (Initially empty) -->
     <center>
-        <StackPane fx:id="contentArea" /> <!-- Content will be injected here -->
+        <SplitPane>
+            <!--<TreeView fx:id="treeView" />-->
+            <StackPane fx:id="contentArea" /> <!-- Content will be injected here -->
+        </SplitPane>
     </center>
 </BorderPane>

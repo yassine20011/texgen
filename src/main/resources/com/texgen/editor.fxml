@@ -15,6 +15,10 @@
         <Button text="Bold" onAction="#wrapWithBold"/>
         <Button text="Italic" onAction="#wrapWithItalic"/>
         <Button text="Equation" onAction="#wrapWithEquation"/>
+        <Button text="Image" onAction="#wrapWithImage"/>
+        <Button text="Insert Image" onAction="#insertImage"/>
+        <Button text="Link" onAction="#wrapWithLink"/>
+        <Button text="Compile" onAction="#compileDocument"/>
     </ToolBar>
 
     <SplitPane fx:id="splitPane" dividerPositions="0.5">

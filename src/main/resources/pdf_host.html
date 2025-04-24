@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 100vh; /* Full height of the viewport */
+            border: none; /* Remove default border */
+        }
+    </style>
+    <link rel="stylesheet" href="./pdfjs/web/viewer.css">
+
+<body>
+<script src="./pdfjs/web/viewer.js"></script>
+<iframe id="pdfFrame" title="PDF Viewer"></iframe>
+<script>
+    function loadPdf(pdfServerUrl) { // Parameter is now the SERVER url for the PDF
+        const frame = document.getElementById('pdfFrame');
+        if (!pdfServerUrl) {
+            console.error("No PDF Server URL provided to loadPdf function.");
+            frame.src = 'about:blank';
+            return;
+        }
+
+        // Construct the URL for the iframe.
+        // pdf_host.html is at "/", viewer.html is served under "/pdfjs/web/"
+        // Use the pdfServerUrl directly as the 'file' parameter value.
+        // NO need to encodeURIComponent here, as the server URL should already be safe.
+        // viewer.html will get ?file=http://localhost:xxxx/pdf?path=...
+        const viewerUrl = './pdfjs/web/viewer.html?file=' + encodeURIComponent(pdfServerUrl); // Still encode the server URL as it becomes a parameter *value*
+
+        console.log("Setting iframe source to:", viewerUrl);
+        frame.src = viewerUrl;
+
+        // Log iframe load errors
+        frame.onerror = () => {
+            console.error("Failed to load PDF in iframe. Check the viewer URL:", viewerUrl);
+        };
+    }
+</script>
+</body>
+</html>

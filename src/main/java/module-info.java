@@ -10,6 +10,7 @@ module com.texgen.main {
     requires jdk.jfr;
     requires jbcrypt;
     requires org.fxmisc.richtext;
+    requires jdk.httpserver;
     opens com.texgen.controllers to javafx.fxml;
 
 
